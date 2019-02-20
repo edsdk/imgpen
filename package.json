@@ -1,6 +1,6 @@
 {
   "name": "@edsdk/imgpen",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SDK for editing and uploading images in your web app",
   "main": "./dist/image-editor.js",
   "types": "./dist/image-editor.d.ts",

@@ -7,8 +7,8 @@ export function editImage(
         onSave: (url: string) => void
     }
 ) {
-    includeJS('//cdn.imgpen.com/imageeditorsdk.js', function() {
-        (window as any).ImageEditorSDK.editImage(
+    includeJS('//cdn.imgpen.com/imgpen.js', function() {
+        (window as any).ImgPen.editImage(
             conf.urlImage,
             conf.urlUploader,
             conf.urlFiles,
