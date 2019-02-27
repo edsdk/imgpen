@@ -19,7 +19,12 @@ export function editImage(
 }
 
 export function preload(onLoaded?: () => void) {
-    includeJS('//cdn.imgpen.com/imgpen.js', onLoaded);
+    includeJS('//cdn.imgpen.com/imgpen.js', () => {
+        (window as any).ImgPen.load(() => {
+            if (onLoaded)
+                onLoaded();
+        });
+    });
 }
 
 function includeJS(url: string, onLoaded?: () => void) {
