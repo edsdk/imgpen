@@ -7,7 +7,7 @@ export function editImage(
         onSave: (url: string) => void
     }
 ) {
-    includeJS('//cdn.imgpen.com/imgpen.js', function() {
+    preload(() => {
         (window as any).ImgPen.editImage(
             conf.urlImage,
             conf.urlUploader,
@@ -18,7 +18,11 @@ export function editImage(
     });
 }
 
-function includeJS(url: string, onIncluded: () => void) {
+export function preload(onLoaded?: () => void) {
+    includeJS('//cdn.imgpen.com/imgpen.js', onLoaded);
+}
+
+function includeJS(url: string, onLoaded?: () => void) {
     var scripts = document.getElementsByTagName("script");
     var alreadyExists = false;
     for (var i = 0; i < scripts.length; i++) {
@@ -29,24 +33,24 @@ function includeJS(url: string, onIncluded: () => void) {
     if (!alreadyExists) {
         var script = document.createElement("script") as any;
         script.type = "text/javascript";
-        if (onIncluded != null) {
+        if (onLoaded) {
             if (script.readyState) {  // IE
                 script.onreadystatechange = function () {
                     if (script.readyState === "loaded" || script.readyState === "complete") {
                         script.onreadystatechange = null;
-                        onIncluded();
+                        onLoaded();
                     }
                 };
             } else {  // Others browsers
                 script.onload = function () {
-                    onIncluded();
+                    onLoaded();
                 };
             }
         }
         script.src = url;
         document.getElementsByTagName("head")[0].appendChild(script);
     } else {
-        if (onIncluded != null)
-            onIncluded();
+        if (onLoaded)
+            onLoaded();
     }
 }

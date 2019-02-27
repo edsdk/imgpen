@@ -63,6 +63,18 @@ function editImage({
 See [ImgPen example](https://github.com/edsdk/imgpen-example) to see real code with comments.
 
 
+#### Preloading
+
+To avoid network delays you can preload ImgPen at any moment (e. g. you page is loaded):
+
+```js
+function preload(callback?: function());
+```
+
+After this call all next `editImage` calls will be faster. If you do not use `preload`, calling `editImage` first time can be slower.
+You can also pass `callback` function if you want to execute some code right after ImgPen libraries were preloaded.
+
+
 ## Acknowledgments
 
 ImgPen was inspired by Aviary (dead) and Adobe Creative SDK for Web (service was closed).
