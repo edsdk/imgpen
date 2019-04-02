@@ -7,8 +7,7 @@ Easy to install image editor which covers all standard required features like cr
 It can be perfectly integrated with common CMSs (WordPress, Drupal, Joomla, etc), with popular client frameworks (React, Angular, Vue, etc.), server frameworks (Laravel, Symphony, YII, RoR, Django, etc.) and in any other code using API.
 
 The great advantage of ImgPen are tools for full stack application integration.
-ImgPen contains both client script (JS/TypeScript) and server side [file uploader](https://npmjs.com/package/@edsdk/file-uploader-server) in **PHP**, **Node**, **Java** and **ASP.NET** for saving images on your server. We also have [microservice](https://npmjs.com/package/@edsdk/file-uploader-microservice) for those who would like to use uploader separately or uses different language on server side.
-
+ImgPen contains both client script (JS/TypeScript) and server side [file uploader](https://npmjs.com/package/@edsdk/file-uploader-server) in **PHP**, **Node** and **Java** for saving images on your server. It also has microservice feature for those who would like to use uploader separately or uses different language on server side.
 Deploy and run your own demo in 1 min using [ImgPen example](https://github.com/edsdk/imgpen-example) repository.
 
 
@@ -39,7 +38,7 @@ ImgPen.editImage({
 
 This code will call ImgPen image editor on specified image and upload result image file when (and if) user clicks save button. `onSave` callback will update your image with new picture.
 
-You need to have [file uploader](https://npmjs.com/package/@edsdk/file-uploader-server) installed. When using ImgPen by free license, it comes as Express service module handling specified URL and uploading files in defined directory. For commercial license users PHP, Java and ASP.NET backends are provided as well.
+You need to have [file uploader](https://npmjs.com/package/@edsdk/file-uploader-server) installed. When using ImgPen by free license, it comes as Express service module handling specified URL and uploading files in defined directory. For commercial license users PHP and Java backends are provided as well.
 
 
 ## API
@@ -88,7 +87,7 @@ Double licensing:
 1. Trial EdSDK license
     - All features
     - NOT for commercial usage (except trial purposes on dev server)
-    - [Server side](https://npmjs.com/package/@edsdk/file-uploader-server) in TypeScript/JavaScript only (using [microservice](https://npmjs.com/package/@edsdk/file-uploader-microservice) is OK).
+    - [Server side](https://npmjs.com/package/@edsdk/file-uploader-server) in TypeScript/JavaScript only.
 
 2. Commercial EdSDK license
     - All features
